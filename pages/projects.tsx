@@ -19,7 +19,7 @@ const Projects = ({ projects }: any) => {
         </h1>
         <div className="grid grid-cols-1 md:gird-cols-2 gap-8 xs:w-full m-6 py-10">
           {projects.results.map((aProject: any) => (
-            <ProjectsItem data={aProject} key={aProject.id} />
+            <ProjectsItem aProject={aProject} key={aProject.id} />
           ))}
         </div>
       </div>

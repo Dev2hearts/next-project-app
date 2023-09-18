@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const ProjectsItem = ({ data }: any) => {
-  const title = data.properties.이름.title[0].text.content;
-  const githubLink = data.properties.GitHub.url;
-  const figmaLink = data.properties.Figma.url;
-  const description = data.properties.Description.rich_text[0].plain_text;
-  const coverImage = data.cover.external.url;
-  const tags = data.properties.태그.multi_select;
-  const start = data.properties.workPeriod.data.start;
-  const end = data.properties.workPeriod.data.end;
+const ProjectsItem = ({ aProject }: any) => {
+  const title = aProject.properties.이름.title[0].text.content;
+  const githubLink = aProject.properties.GitHub.url;
+  const figmaLink = aProject.properties.Figma.url;
+  const description = aProject.properties.Description.rich_text[0].plain_text;
+  const coverImage = aProject.cover.external.url;
+  const tags = aProject.properties.태그.multi_select;
+  const start = aProject.properties.WorkPeriod.date.start;
+  const end = aProject.properties.WorkPeriod.date.end;
 
   const calcPeriod = (start: any, end: any) => {
     const startDateStringArray = start.split('-');
