@@ -36,12 +36,13 @@ const ProjectsItem = ({ aProject }: any) => {
       <Image
         className="rounded-t-xl"
         src={coverImage}
-        width={100}
-        height={60}
+        width={500}
+        height={300}
         alt="cover imgae"
         layout="responsive"
         objectFit="cover"
         quality={100}
+        style={{ maxHeight: '300px' }}
       />
       <div className="p-4 flex-col flex">
         <h1 className="text-2xl font-bold ">{title}</h1>

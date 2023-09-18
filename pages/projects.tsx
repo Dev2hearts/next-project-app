@@ -7,7 +7,7 @@ const Projects = ({ projects }: any) => {
   console.log(projects);
   return (
     <Layout>
-      <div className="flex flex-col justify-center min-h-screen mb-10 px-6">
+      <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
         <Head>
           <title>박지성의 포트폴리오</title>
           <meta name="description" content="오늘도 화이팅!" />
@@ -17,7 +17,7 @@ const Projects = ({ projects }: any) => {
           총 프로젝트 :
           <span className="pl-4 text-blue-500">{projects.results.length}</span>
         </h1>
-        <div className="grid grid-cols-1 md:gird-cols-2 gap-8 xs:w-full m-6 py-10">
+        <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2" style={{maxWidth:"1400px"}}>
           {projects.results.map((aProject: any) => (
             <ProjectsItem aProject={aProject} key={aProject.id} />
           ))}
