@@ -1,5 +1,5 @@
 import Layout from '@/components/layout';
-import ProjectsItem from '@/components/projects/prohect-item';
+import ProjectsItem from '@/components/projects/project-item';
 import { DATABASE_ID, TOKEN } from '@/config';
 import Head from 'next/head';
 
@@ -17,7 +17,10 @@ const Projects = ({ projects }: any) => {
           총 프로젝트 :
           <span className="pl-4 text-blue-500">{projects.results.length}</span>
         </h1>
-        <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2" style={{maxWidth:"1400px"}}>
+        <div
+          className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2"
+          style={{ maxWidth: '1400px' }}
+        >
           {projects.results.map((aProject: any) => (
             <ProjectsItem aProject={aProject} key={aProject.id} />
           ))}
@@ -41,6 +44,12 @@ export async function getStaticProps() {
     },
     body: JSON.stringify({
       page_size: 100,
+      sorts: [
+        {
+          timestamp: 'last_edited_time',
+          direction: 'ascending',
+        },
+      ],
     }),
   };
   const res = await fetch(
@@ -54,5 +63,6 @@ export async function getStaticProps() {
 
   return {
     props: { projects },
+    revalidate: 60, // 데이터 변경이 있으면 갱신 1초 마다 - 갱신 주기 설정 가능
   };
 }
