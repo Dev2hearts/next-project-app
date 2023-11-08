@@ -13,10 +13,11 @@ const Projects = ({ projects }: any) => {
           <meta name="description" content="오늘도 화이팅!" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <h1 className="text-4xl font-bold sm:text-6xl">
+        <h1 className="text-4xl font-bold sm:text-5xl">
           총 프로젝트 :
           <span className="pl-4 text-blue-500">{projects.results.length}</span>
         </h1>
+        <h2 className='pt-5 text-xl'>이미지 클릭시 해당 프로젝트 상세페이지로 이동합니다 !</h2>
         <div
           className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2"
           style={{ maxWidth: '1400px' }}

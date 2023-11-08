@@ -26,13 +26,13 @@ const Header = () => {
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <Link href="/" className="mr-5 hover:text-gray-900">
-            홈
+            Home
           </Link>
           <Link href="/projects" className="mr-5 hover:text-gray-900">
-            프로젝트
+            Projects
           </Link>
-          <Link href="/" className="mr-5 hover:text-gray-900">
-            연락하기
+          <Link href="https://www.notion.so/dev2hearts/08a88805f39f47e7b13e77190d0a69c4" className="mr-5 hover:text-gray-900" target='_blank'>
+           About me
           </Link>
         </nav>
         <DarkModeToggle />
