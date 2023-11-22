@@ -75,10 +75,10 @@ const ProjectsItem = ({ aProject }: any) => {
             작업기간 : {start} ~ {end} ({calcPeriod(start, end)}일)
           </p>
         ) : null}
-        <div className="flex items-start mt-2">
+        <div className="flex items-start mt-2 flex-wrap">
           {tags.map((aTag: any) => (
             <h1
-              className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+              className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30 mt-2"
               key={aTag.id}
               // style={{ background: `${aTag.color}`, color: 'black' }}
             >
