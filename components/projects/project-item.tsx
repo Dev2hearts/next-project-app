@@ -47,6 +47,7 @@ const ProjectsItem = ({ aProject }: any) => {
           objectFit="cover"
           quality={100}
           style={{ maxHeight: '300px' }}
+          priority={true}
         />
       </Link>
       <div className="p-4 flex-col flex">
